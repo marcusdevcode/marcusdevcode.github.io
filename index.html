@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcus - Projects</title>
+<meta name="description" content="Desktop apps by Marcus: Rusty Time Splitter and YFV Player.">
+<style>
+  :root {
+    --bg: #f6f7fb; --card: #ffffff; --text: #1b1e2b; --muted: #5b6075;
+    --border: #e3e6f0; --accent: #6c5ce7; --accent-2: #e17055;
+    --shadow: 0 8px 30px rgba(20, 24, 50, .08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f111a; --card: #181b28; --text: #eceef7; --muted: #9aa0b8;
+      --border: #272b3d; --shadow: 0 8px 30px rgba(0, 0, 0, .4);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.55;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  header { text-align: center; padding: 64px 0 32px; }
+  header h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; }
+  header p { color: var(--muted); margin: 0; font-size: 1.1rem; }
+  .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); padding-bottom: 64px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+    padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+    transition: transform .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); }
+  .icon {
+    width: 64px; height: 64px; border-radius: 16px; display: grid; place-items: center;
+    color: #fff; margin-bottom: 18px;
+  }
+  .icon svg { width: 34px; height: 34px; }
+  .rts .icon { background: linear-gradient(135deg, #e17055, #d63031); }
+  .yfv .icon { background: linear-gradient(135deg, #6c5ce7, #4834d4); }
+  .card h2 { margin: 0 0 8px; font-size: 1.4rem; }
+  .card p { color: var(--muted); margin: 0 0 16px; }
+  ul.features { margin: 0 0 20px; padding-left: 20px; }
+  ul.features li { margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: auto 0 20px; }
+  .tag {
+    font-size: .8rem; padding: 3px 10px; border-radius: 999px;
+    border: 1px solid var(--border); color: var(--muted);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+    padding: 10px 18px; border-radius: 10px; background: var(--text); color: var(--bg);
+    text-decoration: none; font-weight: 600;
+  }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .btn:hover { opacity: .85; }
+  footer { text-align: center; color: var(--muted); padding: 24px 0 48px; border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>My Projects</h1>
+    <p>Cross-platform desktop apps built with Tauri, Rust and React.</p>
+  </header>
+
+  <main class="grid">
+    <!-- Rusty Time Splitter -->
+    <article class="card rts">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/>
+        </svg>
+      </div>
+      <h2>Rusty Time Splitter</h2>
+      <p>A speedrun split timer with a transparent, always-on-top overlay.</p>
+      <ul class="features">
+        <li>Search speedrun.com for games and categories, with the world record as comparison</li>
+        <li>Custom splits, global hotkeys, fonts, colors and themes</li>
+        <li>Resumable runs, LiveSplit and CSV support, optional Google Drive sync</li>
+      </ul>
+      <div class="tags"><span class="tag">Tauri 2</span><span class="tag">Rust</span><span class="tag">React</span><span class="tag">TypeScript</span></div>
+      <a class="btn" href="https://github.com/marcusdevcode/Rusty-Time-Splitter" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </article>
+
+    <!-- YFV Player -->
+    <article class="card yfv">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/>
+        </svg>
+      </div>
+      <h2>YFV Player</h2>
+      <p>A desktop video player that plays from your disk and can download from YouTube for unreliable connections.</p>
+      <ul class="features">
+        <li>Remembers position and settings; large files stream from disk</li>
+        <li>Colored playlists, drag and drop, loop, import/export</li>
+        <li>YouTube search and download queue with auto-resume; custom themes and multiple languages</li>
+      </ul>
+      <div class="tags"><span class="tag">Tauri v2</span><span class="tag">Rust</span><span class="tag">React</span><span class="tag">TypeScript</span></div>
+      <a class="btn" href="https://github.com/marcusdevcode/YFV-Player" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </article>
+  </main>
+
+  <footer>
+    <a href="https://github.com/marcusdevcode" target="_blank" rel="noopener">github.com/marcusdevcode</a>
+  </footer>
+</div>
+</body>
+</html>
